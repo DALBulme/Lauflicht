@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="startButton">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>120</y>
+      <x>150</x>
+      <y>100</y>
       <width>99</width>
       <height>30</height>
      </rect>
@@ -33,7 +33,7 @@
    <widget class="QLabel" name="blinkLabel">
     <property name="geometry">
      <rect>
-      <x>137</x>
+      <x>160</x>
       <y>40</y>
       <width>81</width>
       <height>22</height>
@@ -51,6 +51,47 @@
     </property>
     <property name="text">
      <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSlider" name="speedSlider">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>150</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>150</y>
+      <width>68</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
     </property>
    </widget>
   </widget>
@@ -76,5 +117,22 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>speedSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
